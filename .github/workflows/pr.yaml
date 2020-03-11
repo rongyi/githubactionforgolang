@@ -32,7 +32,7 @@ jobs:
         # Build ignored directories
         cat /github/workflow/event.json
 
-    - name: format code and add comment
-      uses: lucas7788/go-github-actions/fmt@v0.5.0
+    - name: format code
+      uses: lucas7788/go-github-actions/fmt@v0.5.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

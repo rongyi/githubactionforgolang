@@ -32,6 +32,6 @@ jobs:
         # Build ignored directories
 
     - name: format code
-      uses: lucas7788/go-github-actions/fmt@v0.5.0
+      uses: lucas7788/go-github-actions/fmt@v0.5.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
