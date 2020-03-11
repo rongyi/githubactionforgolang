@@ -31,7 +31,7 @@ jobs:
         # git commit -a -m"Format code in action"
         # Build ignored directories
 
-    - name: format code and add comment
+    - name: format code
       uses: lucas7788/go-github-actions/fmt@v0.5.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
