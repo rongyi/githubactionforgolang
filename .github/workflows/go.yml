@@ -8,7 +8,9 @@ name: Go
 on:
   push:
     tags:
-      - '*'
+      # - '*'
+      - 'v*.*.*'
+
 
 jobs:
 
@@ -34,6 +36,9 @@ jobs:
         # git commit -a -m"Format code in action"
         # cat $HOME/workflow/event.json
         cat $GITHUB_EVENT_PATH
+        env
+        go build -o actiontestbinary
+
 
     # - uses: mikeal/publish-to-github-action@master
     #   env:
@@ -53,3 +58,10 @@ jobs:
           - Second Change
         draft: false
         prerelease: false
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      files: |
+        actiontestbinary
