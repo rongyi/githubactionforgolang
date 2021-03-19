@@ -59,9 +59,11 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Release
+    - name: Release with attachment
       uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: |
+          actiontestbinary
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      files: |
-        actiontestbinary
