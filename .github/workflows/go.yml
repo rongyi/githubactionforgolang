@@ -1,9 +1,14 @@
 name: Go
 
+# on:
+#   push:
+#     branches: [ master ]
+
+# new tag event
 on:
   push:
-    branches: [ master ]
-
+    tags:
+      - '*'
 
 jobs:
 
