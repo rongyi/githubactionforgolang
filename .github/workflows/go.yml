@@ -31,6 +31,7 @@ jobs:
 
     - name: command
       run: |
+        go get -v golang.org/x/tools/cmd/goimports
         gofmt -w .
         # git config --global user.email "cicd@a.b"
         # git config --global user.name "cicd"
